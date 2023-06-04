@@ -107,15 +107,14 @@ end
 return C
 ```
 
-If your intention is only to toggle the background and If you don't mind changing after changing alacritty for example you can just create a key mapping calling what you need, but you would need to call it with all nvim opened instances.
-When while this does it for all.
+If your intention is only to toggle the background and if you don't mind changing after changing alacritty for example, you can just create a key mapping calling what you need, but you would need to call it with all nvim opened instances, while this does it for all.
 ```lua
-vim.api.nvim_set_keymap("n", "<F6>", ':Toggle<CR>', { noremap = true })
+vim.api.nvim_set_keymap("n", "<F6>", ':ToggleBackground<CR>', { noremap = true })
 ```
 
 With all of that in place you can also now toggle alacritty or the terminal of your choice if supported.
 ```bash
-# assumes this file alacritty and nvim is in ${XDG_CONFIG_HOME}/bin
+# assumes this file alacritty and nvim is in ${XDG_CONFIG_HOME} and itself lives at ${XDG_CONFIG_HOME}/bin
 # otherwise customise below paths to your liking
 
 base_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
